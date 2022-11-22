@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Page from '../components/Page';
-import { BlogPostCard } from '../sections/@dashboard/blog';
+import { BlogShowCard } from '../sections/@dashboard/blog';
 import { getPost } from '../services/post';
 
 export default function BlogView() {
@@ -24,5 +24,5 @@ export default function BlogView() {
     };
   }, [id]);
 
-  return <Page title="Blog">{post && <BlogPostCard key={post.id} post={post} expanded />}</Page>;
+  return <Page title="Blog">{post && <BlogShowCard key={post.id} post={post} expanded />}</Page>;
 }

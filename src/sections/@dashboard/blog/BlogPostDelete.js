@@ -31,7 +31,7 @@ export default function BlogPostDelete({ open, handleClose, onAgree }) {
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
     >
-      <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
+      <DialogTitle id="alert-dialog-title">{'Are you sure do you want to delete this post?'}</DialogTitle>
       <DialogContent>
         <DialogContentText id="alert-dialog-description">
           This action cannot be undone, are you sure you want to delete post?

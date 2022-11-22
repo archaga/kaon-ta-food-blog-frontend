@@ -15,11 +15,6 @@ import BlogUpdatePost from './BlogUpdatePost';
 
 // ----------------------------------------------------------------------
 
-const CardMediaStyle = styled('div')({
-  position: 'relative',
-  paddingTop: 'calc(100% * 2 / 4)',
-});
-
 const TitleStyle = styled(Link)({
   height: 44,
   overflow: 'hidden',
@@ -32,18 +27,10 @@ const InfoStyle = styled('div')(({ theme }) => ({
   display: 'flex',
   flexWrap: 'wrap',
   justifyContent: 'flex-end',
-  marginTop: theme.spacing(3),
+  marginLeft: 15,
+  marginBottom: 15,
   color: theme.palette.text.disabled,
 }));
-
-const CoverImgStyle = styled('img')({
-  top: 0,
-  // width: '100%',
-  // height: '100%',
-  maxHeight: '50vh',
-  objectFit: 'cover',
-  position: 'absolute',
-});
 
 const ColorButton = styled(Button)(({ theme }) => ({
   backgroundColor: alpha(theme.palette.background.COFFEEBEAN[0], 1),
@@ -114,6 +101,10 @@ export default function BlogPostCard({ post, index, expanded }) {
           >
             {title}
           </TitleStyle>
+
+          {/* <Typography gutterBottom variant="body2" sx={{ color: 'text.disabled', display: 'block' }}>
+            {description}
+          </Typography> */}
         </CardContent>
         {user && (
           <CardActions>
