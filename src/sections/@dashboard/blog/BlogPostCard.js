@@ -114,10 +114,6 @@ export default function BlogPostCard({ post, index, expanded }) {
           >
             {title}
           </TitleStyle>
-
-          <Typography gutterBottom variant="body2" sx={{ color: 'text.disabled', display: 'block' }}>
-            {description}
-          </Typography>
         </CardContent>
         {user && (
           <CardActions>

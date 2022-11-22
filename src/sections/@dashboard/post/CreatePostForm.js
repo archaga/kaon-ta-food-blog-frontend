@@ -2,6 +2,7 @@ import { alpha, Box, Button, Card, Stack, styled, TextField, Tooltip } from '@mu
 import { Form, FormikProvider, useFormik } from 'formik';
 import { useSnackbar } from 'notistack';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { createPost } from '../../../services/post';
 
@@ -13,6 +14,7 @@ const ColorButton = styled(Button)(({ theme }) => ({
 }));
 
 export default function CreatePostForm() {
+  const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
   const [image, setImage] = useState();
   const PostSchema = Yup.object().shape({
@@ -35,6 +37,7 @@ export default function CreatePostForm() {
       return createPost(title, description, image)
         .then((res) => {
           enqueueSnackbar('Post created successfully.', { variant: 'success' });
+          navigate('/dashboard/blog');
           return Promise.resolve(res);
         })
         .catch((err) => {
