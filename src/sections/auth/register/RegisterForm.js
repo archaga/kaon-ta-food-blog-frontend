@@ -52,6 +52,9 @@ export default function RegisterForm() {
       register(name, email, domain, password, password_confirmation)
         .then((res) => {
           document.location = `${process.env.REACT_APP_API_PROTOCOL}${initialValues.domain}.${process.env.REACT_APP_HOST_URL}/page/home`;
+          enqueueSnackbar('Welcome!', {
+            variant: 'success',
+          });
           return Promise.resolve(res);
         })
         .catch((err) => {

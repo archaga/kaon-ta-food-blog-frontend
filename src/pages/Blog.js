@@ -6,10 +6,8 @@ import { useEffect, useState } from 'react';
 import Iconify from '../components/Iconify';
 import Page from '../components/Page';
 import { BlogPostCard } from '../sections/@dashboard/blog';
+import { getUser } from '../services/auth';
 import { getPosts } from '../services/post';
-
-// mock
-
 // ----------------------------------------------------------------------
 
 const ColorButton = styled(Button)(({ theme }) => ({
@@ -37,6 +35,14 @@ export default function Blog() {
     };
   }, []);
 
+  const [user, setUser] = useState();
+  useEffect(() => {
+    getUser().then((res) => {
+      console.log({ userRes: res });
+      setUser(res.data.data);
+    });
+  }, []);
+
   return (
     <Page title="Blog">
       <Container>
@@ -44,14 +50,16 @@ export default function Blog() {
           <Typography variant="h4" gutterBottom>
             Blog
           </Typography>
-          <ColorButton
-            variant="contained"
-            component={RouterLink}
-            to="/dashboard/createPost"
-            startIcon={<Iconify icon="eva:plus-fill" />}
-          >
-            Create Post
-          </ColorButton>
+          {user && (
+            <ColorButton
+              variant="contained"
+              component={RouterLink}
+              to="/dashboard/createPost"
+              startIcon={<Iconify icon="eva:plus-fill" />}
+            >
+              Create Post
+            </ColorButton>
+          )}
         </Stack>
 
         <Grid container spacing={3} mt={5}>

@@ -35,7 +35,7 @@ export default function LandingPageCard() {
         component={RouterLink} to="/page/register"
         sx={{ minWidth: 200, mt: 5 }}
       >
-        Get Started
+        Discover More
       </ColorButton>
     </LandingPageLayout>
   );
