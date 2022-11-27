@@ -60,7 +60,7 @@ export default function CreatePostForm() {
         <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
           <Box
             sx={{
-              '& > :not(style)': { ml: 14.5, mt: 5, width: '100ch' },
+              '& > :not(style)': { ml: 14, mt: 5, width: '100ch' },
             }}
             noValidate
             autoComplete="off"

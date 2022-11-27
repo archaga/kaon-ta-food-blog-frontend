@@ -47,7 +47,7 @@ BlogPostCard.propTypes = {
 };
 
 export default function BlogPostCard({ post, index, expanded }) {
-  const { description, id, image_path: image, title, updatedAt } = post;
+  const { id, image_path: image, title, updatedAt } = post;
   const latestPostLarge = index === 0;
   const latestPost = index === 1 || index === 2;
   const [openDelete, setOpenDelete] = useState(false);
@@ -101,10 +101,6 @@ export default function BlogPostCard({ post, index, expanded }) {
           >
             {title}
           </TitleStyle>
-
-          {/* <Typography gutterBottom variant="body2" sx={{ color: 'text.disabled', display: 'block' }}>
-            {description}
-          </Typography> */}
         </CardContent>
         {user && (
           <CardActions>

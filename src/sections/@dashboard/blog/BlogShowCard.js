@@ -64,7 +64,7 @@ export default function BlogShowCard({ post, index, expanded }) {
   return (
     <Grid item xs={12} sm={latestPostLarge ? 12 : 6} md={latestPostLarge ? 6 : 3}>
       <Card sx={{ position: 'relative' }}>
-      <CardMedia
+        <CardMedia
           component="img"
           sx={{ height: !expanded ? '200px' : undefined, maxHeight: '50vh', objectFit: 'contain' }}
           image={`${process.env.REACT_APP_API_PROTOCOL}${getDomain()}.${process.env.REACT_APP_IMAGE_URL}/${image}`}
